@@ -5,7 +5,7 @@ describe "As a visitor to the site" do
 		it "contains links to the home, login, registration, and articles paths" do
 		  visit root_path
 
-      within("#navbar") do
+      within(".navbar") do
         expect(current_path).to eq("/")  
 
         click_link("Login")
