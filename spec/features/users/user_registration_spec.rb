@@ -5,23 +5,28 @@ describe "As a visitor on registration path" do
 		it "redirects me to my profile page with a flash message confirming I am logged in" do
       visit registration_path
 
-      within '#new-user-form' do
+      within '.new-user-form' do
         fill_in 'Name', with: 'Jane Doe'		
-        fill_in 'Street Address', with: 'Jane Doe'		
-        fill_in 'City', with: 'Jane Doe'		
-        fill_in 'State', with: 'Jane Doe'		
-        fill_in 'Zip Code', with: 'Jane Doe'		
-        fill_in 'Email', with: 'Jane Doe'		
-        fill_in 'Password', with: 'Jane Doe'		
-        fill_in 'Password Confirmation', with: 'Jane Doe'		
-        click_button 'Create User'
+        fill_in 'Street address', with: '123 Street Rd.'
+        fill_in 'City', with: 'Chicago'		
+        fill_in 'State', with: 'Illinois'		
+        fill_in 'Zip code', with: 55555		
+        fill_in 'Email', with: 'tester1@gmail.com'		
+        fill_in 'Password', with: 'password'		
+        fill_in 'Password confirmation', with: 'password'		
+
+        click_button 'Create Account'
       end
 
-      #expect a flash message
-      expect(current_path).to eq(profile_path)
+      expect(page).to have_content("Account successfully created!")
+      user = User.last
 
-      #user = User.last
-      #expect all the things to be right
+      expect(user.name).to eq('Jane Doe')
+      expect(user.street_address).to eq('123 Street Rd.')
+      expect(user.city).to eq('Chicago')
+      expect(user.state).to eq('Illinois')
+      expect(user.zip_code).to eq(55555)
+      expect(user.email).to eq('tester1@gmail.com')
 		end
 	end
 end
