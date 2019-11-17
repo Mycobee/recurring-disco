@@ -1,11 +1,27 @@
-<%= form_with model: @user, id: "new-user-form" do |f| %>
+<%= form_with model: @user, class: "new-user-form" do |f| %>
+  <%= f.label :name %>
   <%= f.text_field :name %>
+  
+  <%= f.label :street_address %>
   <%= f.text_field :street_address %>
+
+  <%= f.label :city %>
   <%= f.text_field :city %>
+  
+  <%= f.label :state %>
   <%= f.text_field :state %>
+
+  <%= f.label :zip_code %>
   <%= f.number_field :zip_code %>
+
+  <%= f.label :email %>
   <%= f.text_field :email %>
+
+  <%= f.label :password %>
   <%= f.text_field :password %>
+
+  <%= f.label :password_confirmation %>
   <%= f.text_field :password_confirmation %>
-  <%= f.submit "Create" %>
+
+  <%= f.submit "Create Account" %>
 <% end %>
