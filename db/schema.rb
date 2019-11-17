@@ -23,7 +23,7 @@ ActiveRecord::Schema.define(version: 2019_11_17_215619) do
     t.string "city"
     t.string "state"
     t.integer "zip_code"
-    t.boolean "recurring"
+    t.boolean "recurring", default: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end

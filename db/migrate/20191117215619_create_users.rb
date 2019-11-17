@@ -8,7 +8,7 @@ class CreateUsers < ActiveRecord::Migration[6.0]
       t.string :city
       t.string :state
       t.integer :zip_code
-      t.boolean :recurring
+      t.boolean :recurring, default: false
 
       t.timestamps
     end
