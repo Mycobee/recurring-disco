@@ -10,6 +10,13 @@
   </head>
 
   <body>
+    <div class="navbar">
+      <%= link_to "Welcome", root_path, class: "navlink active" %>
+      <%= link_to "Articles", articles_path, class: "navlink" %>
+      <%= link_to "Login", login_path, class: "navlink" %>
+      <%= link_to "Sign Up", registration_path, class: "navlink" %>
+    </div>
+
     <%= yield %>
   </body>
 </html>
