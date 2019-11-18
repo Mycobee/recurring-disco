@@ -7,6 +7,8 @@ Rails.application.routes.draw do
 
   # users routes
   get '/register', to: 'users#new', as: 'registration'
+  get '/profile/:id', to: 'users#show', as: 'profile'
+  resources :users, only: [:create]
 
   # articles routes
   resources :articles, only: [:index]
