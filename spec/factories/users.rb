@@ -11,9 +11,9 @@ FactoryBot.define do
     recurring { true }
   end
 
-  factory :inactive_user, parent: :user do
-    sequence(:name) { |n| "Inactive User Name #{n}" }
-    sequence(:email) { |n| "inactive_user_#{n}@gmail.com" }
+  factory :non_recurring_user, parent: :user do
+    sequence(:name) { |n| "Non Recurring User Name #{n}" }
+    sequence(:email) { |n| "non_recurring_user_#{n}@gmail.com" }
     recurring { false }
   end
 
