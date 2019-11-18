@@ -13,8 +13,12 @@
     <div class="navbar">
       <%= link_to "Welcome", root_path, class: "navlink active" %>
       <%= link_to "Articles", articles_path, class: "navlink" %>
-      <%= link_to "Login", login_path, class: "navlink" %>
-      <%= link_to "Sign Up", registration_path, class: "navlink" %>
+      <% if current_user.nil? %>
+        <%= link_to "Login", login_path, class: "navlink" %>
+        <%= link_to "Sign Up", registration_path, class: "navlink" %>
+      <% else %>
+        <%= link_to "Log Out", logout_path, class: "navlink" %>
+      <% end %>
     </div>
 
      <div class="flash-message-container">
