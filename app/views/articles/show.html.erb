@@ -2,9 +2,10 @@
 <p><%= @article.body %></p>
 <h5> Add a comment </h5>
 <%= render partial: 'form', locals: {form_submit_path: article_comments_path(@article)} %>
-<% @article.comments.each do |comment| %>
+<% @comments.each do |comment| %>
   <ul id="comment-<%= comment.id %>">
     <li><b>Posted By: </b><%= comment.user.name %></h5>
     <li class="comment-body"><%= comment.body %></li>
+    <li class="comment-timestamp"><%= comment.created_at %></li>
   </ul>
 <% end %>

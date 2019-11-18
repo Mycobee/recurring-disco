@@ -1,27 +1,43 @@
 <%= form_with model: @user, class: "new-user-form", url: form_submit_path do |f| %>
-  <%= f.label :name %>
-  <%= f.text_field :name %>
+  <p>
+    <%= f.label :name %>
+    <%= f.text_field :name %>
+  </p>
   
-  <%= f.label :street_address %>
-  <%= f.text_field :street_address %>
+  <p>
+    <%= f.label :street_address %>
+    <%= f.text_field :street_address %>
+  </p>
 
-  <%= f.label :city %>
-  <%= f.text_field :city %>
+  <p>
+    <%= f.label :city %>
+    <%= f.text_field :city %>
+  </p>
   
-  <%= f.label :state %>
-  <%= f.text_field :state %>
+  <p>
+    <%= f.label :state %>
+    <%= f.text_field :state %>
+  </p>
 
-  <%= f.label :zip_code %>
-  <%= f.number_field :zip_code %>
+  <p>
+    <%= f.label :zip_code %>
+    <%= f.number_field :zip_code %>
+  </p>
 
-  <%= f.label :email %>
-  <%= f.text_field :email %>
+  <p>
+    <%= f.label :email %>
+    <%= f.text_field :email %>
+  </p>
 
-  <%= f.label :password %>
-  <%= f.text_field :password, value: nil %>
+  <p>
+    <%= f.label :password %>
+    <%= f.text_field :password, value: nil %>
+  </p>
 
-  <%= f.label :password_confirmation %>
-  <%= f.text_field :password_confirmation, value: nil %>
+  <p>
+    <%= f.label :password_confirmation %>
+    <%= f.text_field :password_confirmation, value: nil %>
+  </p>
 
   <%= f.submit "Create Account" %>
 <% end %>
