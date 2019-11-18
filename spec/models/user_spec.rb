@@ -12,4 +12,35 @@ RSpec.describe User, type: :model do
     it { should validate_numericality_of :zip_code }
     it { should validate_presence_of :zip_code }
   end
+
+  describe 'roles' do
+    it 'can be created as a default user' do
+      user = User.create(
+        email: "email",
+        password: "password",
+        name: "name",
+        street_address: "address",
+        city: "city",
+        state: "state",
+        zip_code: 80503
+      )
+      expect(user.role).to eq('default')
+      expect(user.default?).to be_truthy
+    end
+    
+    it 'can be created as a admin' do
+      user = User.create(
+        email: "email",
+        password: "password",
+        name: "name",
+        street_address: "address",
+        city: "city",
+        state: "state",
+        zip_code: 80503,
+        role: 1
+      )
+      expect(user.role).to eq('admin')
+      expect(user.admin?).to be_truthy
+    end
+  end
 end
