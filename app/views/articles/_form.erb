@@ -1,5 +1,8 @@
 <%= form_with model: @comment, class: "new-comment-form", url: form_submit_path do |f| %>
-  <%= f.label :body %>
-  <%= f.text_field :body %>
-  <%= f.submit "Add Comment" %>
+  <p>
+    <%= f.text_field :body %>
+  </p>
+  <p>
+    <%= f.submit "Add Comment" %>
+  </p>
 <% end %>
