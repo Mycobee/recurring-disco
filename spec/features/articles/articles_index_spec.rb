@@ -12,17 +12,17 @@ describe "As a visitor or user on the articles index page" do
 	    visit articles_path		
 
       within "#article-#{@article_1.id}" do
-        expect(page).to have_content(@article_1.title)
+        expect(page).to have_link(@article_1.title)
         expect(page).to have_content(@article_1.preview)
       end
 
       within "#article-#{@article_2.id}" do
-        expect(page).to have_content(@article_2.title)
+        expect(page).to have_link(@article_2.title)
         expect(page).to have_content(@article_2.preview)
       end
 
       within "#article-#{@article_3.id}" do
-        expect(page).to have_content(@article_3.title)
+        expect(page).to have_link(@article_3.title)
         expect(page).to have_content(@article_3.preview)
       end
 
