@@ -13,7 +13,9 @@ Rails.application.routes.draw do
   resources :users, only: [:create]
 
   # articles routes
-  resources :articles, only: [:index, :show]
+  resources :articles, only: [:index, :show] do
+    resources :comments, only: [:new, :create]
+  end
 
   # recurly routes
   get '/recurly', to: 'recurly#new', as: 'recurly'
