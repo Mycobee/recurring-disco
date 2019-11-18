@@ -14,4 +14,7 @@ Rails.application.routes.draw do
 
   # articles routes
   resources :articles, only: [:index, :show]
+
+  # recurly routes
+  get '/recurly', to: 'recurly#new', as: 'recurly'
 end
