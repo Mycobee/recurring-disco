@@ -11,9 +11,6 @@ describe "As a logged in user to the site" do
         expect(current_path).to eq("/")  
         expect(page).to have_link("Log out")
 
-        click_link("Profile")
-        expect(current_path).to eq(profile_path(user))
-
         click_link("Articles")
         expect(current_path).to eq("/articles")
 
