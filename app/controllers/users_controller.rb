@@ -4,10 +4,15 @@ class UsersController < ApplicationController
 	end
 
   def create
-    user = User.create(user_params)
-    if user
-      flash[:success] = "Account successfully created!"
-      redirect_to(profile_path(user))
+    user = User.new(user_params)
+    if user.save
+      session[:user_id] = user.id
+      flash[:success] = "Registration Successful! You are now logged in."
+      redirect_to profile_path(user)
+    else
+      flash.now[:danger] = user.errors.full_messages
+      user.update(email: "", password: "")
+      render :new
     end
   end
 

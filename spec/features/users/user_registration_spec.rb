@@ -4,7 +4,7 @@ describe "As a visitor on registration path" do
 	describe "When I fill out the new user form completely" do
 		it "redirects me to my profile page with a flash message confirming I am logged in" do
       visit registration_path
-
+save_and_open_page
       within '.new-user-form' do
         fill_in 'Name', with: 'Jane Doe'		
         fill_in 'Street address', with: '123 Street Rd.'
@@ -18,7 +18,7 @@ describe "As a visitor on registration path" do
         click_button 'Create Account'
       end
 
-      expect(page).to have_content("Account successfully created!")
+      expect(page).to have_content( "Registration Successful! You are now logged in.")
       user = User.last
 
       expect(user.name).to eq('Jane Doe')
@@ -29,5 +29,23 @@ describe "As a visitor on registration path" do
       expect(user.email).to eq('tester1@gmail.com')
 		end
 	end
+
+  describe "When I do not fill out necessary values" do
+    it "displays flash messages for each field" do
+      visit registration_path
+      
+      click_button "Create Account"
+save_and_open_page
+
+      expect(page).to have_content("Password can't be blank")
+      expect(page).to have_content("Name can't be blank")
+      expect(page).to have_content("Street address can't be blank")
+      expect(page).to have_content("City can't be blank")
+      expect(page).to have_content("State can't be blank")
+      expect(page).to have_content("Zip code can't be blank")
+      expect(page).to have_content("Zip code is not a number")
+      expect(page).to have_content("Email can't be blank")
+    end
+  end
 end
 
