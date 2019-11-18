@@ -8,7 +8,7 @@ describe "As a visitor to the site" do
       within(".navbar") do
         expect(current_path).to eq("/")  
 
-        click_link("Login")
+        click_link("Log in")
         expect(current_path).to eq("/login")
 
         click_link("Sign Up")
