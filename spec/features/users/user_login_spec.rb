@@ -13,7 +13,7 @@ RSpec.describe "the login page" do
     
     click_button "Log in"
     
-    expect(current_path).to eq(profile_path)
+    expect(current_path).to eq(profile_path(@user))
     
     expect(page).to have_content("You are now logged in!")
   end
@@ -29,7 +29,7 @@ RSpec.describe "the login page" do
   end
   
   describe "when credentials are bad" do
-    xit "fails to login when password does not match email" do
+    it "fails to login when password does not match email" do
       fill_in :email, with: @user.email
       fill_in :password, with: "incorrect password"
       
@@ -39,7 +39,7 @@ RSpec.describe "the login page" do
       expect(page).to have_content("Sorry, that email and password don't match.")
     end
     
-    xit "fails to login when email doesn't exist" do
+    it "fails to login when email doesn't exist" do
       fill_in :email, with: "unknown@example.com"
       fill_in :password, with: "password"
       
@@ -51,16 +51,16 @@ RSpec.describe "the login page" do
   end
   
   describe "when a user is already logged in" do
-    xit "redirects regular users to their profile page" do
+    it "redirects regular users to their profile page" do
       login_as(@user)
       
       visit login_path
       
-      expect(current_path).to eq(profile_path)
+      expect(current_path).to eq(profile_path(@user))
       expect(page).to have_content("You are already logged in.")
     end
     
-    xit "redirects admins to the home page" do
+    it "redirects admins to the home page" do
       login_as(@admin)
       
       visit login_path
