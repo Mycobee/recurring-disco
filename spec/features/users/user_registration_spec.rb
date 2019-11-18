@@ -3,8 +3,7 @@
 require 'rails_helper'
 
 describe 'As a visitor on registration path' do
-  describe 'When I fill out the new user form completely' do
-    it 'redirects me to my profile page with a flash message confirming I am logged in' do
+  describe 'When I fill out the new user form completely' do it 'redirects me to my profile page with a flash message confirming I am logged in' do
       visit registration_path
 
       within '.new-user-form' do
@@ -70,6 +69,7 @@ describe 'As a visitor on registration path' do
       expect(page).to have_css("input[value='city_1']")
       expect(page).to have_css("input[value='state_1']")
       expect(page).to have_css("input[value='zip_1']")
+      expect(page).to_not have_css("input[value='example@gmail.com']")
       expect(page).to_not have_css("input[value='password']")
     end
   end
