@@ -19,6 +19,9 @@ describe "As a logged in user to the site" do
 
         click_link("Welcome")
         expect(current_path).to eq(root_path)
+
+        expect(page).to_not have_link("Log in")
+        expect(page).to_not have_link("Sign Up")
       end
     end
   end
