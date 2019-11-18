@@ -30,10 +30,9 @@ describe "As a user on the articles index page" do
         click_link(@article_1.title)
       end
 
-      expect(current_path).to eq(new_recurly_path)
+      expect(current_path).to eq(recurly_path)
       expect(page).to_not have_content(@article_1.title)
       expect(page).to_not have_content(@article_1.body)
     end 
 	end
 end
-
