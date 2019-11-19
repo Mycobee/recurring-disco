@@ -7,6 +7,8 @@
 
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <script src="https://js.recurly.com/v4/recurly.js"></script>
+    <link href="https://js.recurly.com/v4/recurly.css" rel="stylesheet" type="text/css">
   </head>
 
   <body>
@@ -16,6 +18,9 @@
       <% if current_user.nil? %>
         <%= link_to "Log in", login_path, class: "navlink" %>
         <%= link_to "Sign Up", registration_path, class: "navlink" %>
+      <% elsif !current_user.recurring? %>
+        <%= link_to "Join", recurly_path, class: "navlink" %>
+        <%= link_to "Log out", logout_path, class: "navlink" %>
       <% else %>
         <%= link_to "Log out", logout_path, class: "navlink" %>
       <% end %>

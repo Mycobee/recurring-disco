@@ -9,7 +9,6 @@ Rails.application.routes.draw do
 
   # users routes
   get '/register', to: 'users#new', as: 'registration'
-  get '/profile/:id', to: 'users#show', as: 'profile'
   resources :users, only: [:create]
 
   # articles routes
@@ -18,5 +17,6 @@ Rails.application.routes.draw do
   end
 
   # recurly routes
-  get '/recurly', to: 'recurly#new', as: 'recurly'
+  get '/recurly/new', to: 'recurly#new', as: 'recurly'
+  get '/recurly', to: 'recurly#index'
 end

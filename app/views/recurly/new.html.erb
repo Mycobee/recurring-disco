@@ -1,0 +1,37 @@
+<h1> Join the Disco Family Today! </h1>
+<p>One year for the low cost of 5.99 per month!</p>
+<form>
+  <p>
+    <b>First name:</b>
+    <input type="text" data-recurly="first_name">
+  </p>
+  <p>
+    <b>Last name:</b>
+    <input type="text" data-recurly="last_name">
+  </p>
+  <div data-recurly="card"></div>
+  <input type="hidden" name="recurly-token" data-recurly="token">
+  <button>submit</button>
+</form>
+
+<script>
+  recurly.configure({
+    publicKey: 'ewr1-zqJSfrIL77tcwK5nNIjej0',
+  });
+
+  $('form').on('submit', function (event) {
+    var form = this;
+    event.preventDefault();
+    recurly.token(form, function (err, token) {
+      if (err) {
+        alert(err)
+      } else {
+      // recurly.js has filled in the 'token' field, so now we can submit the
+      // form to your server; alternatively, you can access token.id and do
+      // any processing you wish
+      form.submit();
+      }
+    });
+  });
+</script>
+

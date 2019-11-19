@@ -35,14 +35,14 @@ describe "As a user on the articles index page" do
       expect(page).to_not have_content(@article_1.body)
     end 
 
-    it "Renders a Recurly sign up path for a non logged in user" do
+    it "Renders a login path for a non logged in user" do
 	    visit articles_path
 
       within "#article-#{@article_1.id}" do
         click_link(@article_1.title)
       end
 
-      expect(current_path).to eq(recurly_path)
+      expect(current_path).to eq(login_path)
       expect(page).to_not have_content(@article_1.title)
       expect(page).to_not have_content(@article_1.body)
     end 
