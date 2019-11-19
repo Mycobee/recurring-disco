@@ -39,7 +39,7 @@ $ bundle exec rspec
 RSpec was used to test all models and features.  Edge cases were also covered, as well as many form validations and authorization based on session.
 
 ### Schema
-![schema](schema.png)
+To view schema, run `open active_designer/index.html` from the root path of the project
 
 ### Tech Stack
 * Ruby On Rails
