@@ -166,9 +166,9 @@ I can fill in a form and post a comment
 As a logged in but non recurring visitor, I see a link to `Join` in my navbar, which directs me to `/recurly/new`
 This page lands me at a Recurly form where I can enter the following card information to subscribe:
 
-- [x] first name
-- [x] last name
-- [x] card number
-- [x] expiration
-- [x] CVV
+- first name
+- last name
+- card number
+- expiration
+- CVV
 ```
