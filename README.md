@@ -6,7 +6,7 @@ Recurring Disco Blog is an experimental project using the `Recurly.js` library t
 * To see blog posts and comment, log in as a recurring user with the following credentials: 
 `email: test_1@gmail.com, password: password`
 
-* To see paywalls and Recurly redirects, register and login.
+* To see paywalls and Recurly redirects, register and login as a new user.
 
 ### Production Links
 ###### [Full Stack Application](https://powerful-badlands-17766.herokuapp.com)
