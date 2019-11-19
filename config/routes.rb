@@ -18,5 +18,4 @@ Rails.application.routes.draw do
 
   # recurly routes
   get '/recurly/new', to: 'recurly#new', as: 'recurly'
-  get '/recurly', to: 'recurly#index'
 end
