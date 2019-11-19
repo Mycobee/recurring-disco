@@ -6,8 +6,6 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 #
-require 'factory_bot_rails'
-
 title_1 = "Tantra, 'Hills of Katmandu' (Philips, 1979)"
 title_2 = "Karen Young, 'Hot Shot' (West End, 1978)"
 title_3 = "Trilogy, 'Not Love' (Il Discotto, 1982)"
