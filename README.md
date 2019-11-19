@@ -3,7 +3,7 @@
 ### Overview
 Recurring Disco Blog is an experimental project using the `Recurly.js` library to implement a Recurly payment gateway.  The blog allows subscribing (recurring) users to read and comment on blog posts about disco, while non-recurring users are directed to log in or register. Concepts implemented include sessions, authorization, authentication, caching, relational databases, testing, and RESTful design.  The project was done in just over a day, so certain factors were unable to be addressed due to time (such as more intricate styling).  
 
-* To see blog posts and comment, log in as a recurring user with the following credentials:*
+* To see blog posts and comment, log in as a recurring user with the following credentials: *
 `email: test_1@gmail.com, password: password`
 
 * To see paywalls and Recurly redirects, register and login.*
