@@ -8,6 +8,8 @@ Recurring Disco Blog is an experimental project using the `Recurly.js` library t
 
 * To see paywalls and Recurly redirects, register and login.
 
+### Production Links
+###### [Full Stack Application](https://powerful-badlands-17766.herokuapp.com)
 
 ### Setup
 
@@ -27,8 +29,6 @@ $ bundle exec rails db:seed
 ```
 $ bundle exec rspec
 ```
-### Production Links
-###### [Full Stack Application](https://calorie-counts.herokuapp.com)
 
 ### Versions
 
