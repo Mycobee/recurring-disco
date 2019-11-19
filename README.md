@@ -154,14 +154,14 @@ If I am not logged in, I am redirected to the login page
 If I am not recurring, I am redirected to the recurly page
 ```
 
-### Recurring user can add comments
+#### Recurring user can add comments
 ```
 As a logged in  recurring user on an article show index page,
 I see all comments for that articles,
 I can fill in a form and post a comment
 ```
 
-### Activate Recurring User
+#### Activate Recurring User
 ```
 As a logged in but non recurring visitor, I see a link to `Join` in my navbar, which directs me to `/recurly/new`
 This page lands me at a Recurly form where I can enter the following card information to subscribe:
