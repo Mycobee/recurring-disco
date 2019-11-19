@@ -2,16 +2,14 @@
 
 class ArticlesController < ApplicationController
   def index
-    Rails.cache.fetch("articles_index", expires_in: 24.hours) do
-      @articles = Article.all
+    @articles = Rails.cache.fetch("articles_index", expires_in: 12.hours) do
+      Article.all
     end
   end
 
   def show
-    Rails.cache.fetch("articles_index", expires_in: 15.minutes) do
-      @article = Article.find(params[:id]).order_comments
-      @comments = @article.comments
-    end
+    @article = Article.find(params[:id]).order_comments
+    @comments = @article.comments
     handle_redirect
   end
 
