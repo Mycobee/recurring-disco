@@ -13,7 +13,7 @@ RSpec.describe "the login page" do
     
     click_button "Log in"
     
-    expect(current_path).to eq(profile_path(@user))
+    expect(current_path).to eq(articles_path)
     
     expect(page).to have_content("You are now logged in!")
   end
@@ -24,7 +24,7 @@ RSpec.describe "the login page" do
     
     click_button "Log in"
     
-    expect(current_path).to eq(root_path)
+    expect(current_path).to eq(articles_path)
     expect(page).to have_content("You are now logged in!")
   end
   
@@ -56,7 +56,7 @@ RSpec.describe "the login page" do
       
       visit login_path
       
-      expect(current_path).to eq(profile_path(@user))
+      expect(current_path).to eq(articles_path)
       expect(page).to have_content("You are already logged in.")
     end
     
@@ -65,7 +65,7 @@ RSpec.describe "the login page" do
       
       visit login_path
       
-      expect(current_path).to eq(root_path)
+      expect(current_path).to eq(articles_path)
       expect(page).to have_content("You are already logged in.")
     end
   end

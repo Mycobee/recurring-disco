@@ -2,7 +2,7 @@ class SessionsController < ApplicationController
   def new
     if current_user
       flash[:warning] = "You are already logged in."
-      redirect_user(current_user)
+      redirect_to articles_path
     end
   end
   
@@ -11,7 +11,7 @@ class SessionsController < ApplicationController
     if user && user.authenticate(params[:password])
       session[:user_id] = user.id
       flash[:success] = "You are now logged in!"
-      redirect_user(user)
+      redirect_to articles_path
     else
       flash.now[:danger] = "Sorry, that email and password don't match."
       render :new
@@ -22,15 +22,5 @@ class SessionsController < ApplicationController
     session.clear
     flash[:success] = "You have successfully logged out."
     redirect_to root_path
-  end
-
-  private
-
-  def redirect_user(user)
-    if user.default?
-      redirect_to profile_path(current_user)
-    elsif user.admin?
-      redirect_to root_path
-    end
   end
 end
